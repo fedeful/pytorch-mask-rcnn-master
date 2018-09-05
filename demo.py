@@ -6,7 +6,7 @@ import numpy as np
 import skimage.io
 import matplotlib
 import matplotlib.pyplot as plt
-
+matplotlib.use('GTK')
 import coco
 import utils
 import model as modellib
@@ -68,7 +68,8 @@ class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
 
 # Load a random image from the images folder
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = skimage.io.imread(os.path.join(IMAGE_DIR, random.choice(file_names)))
+#image = skimage.io.imread(os.path.join(IMAGE_DIR, random.choice(file_names)))
+image = skimage.io.imread(os.path.join(IMAGE_DIR, '0001_c5s1_079748_00.jpg'))
 
 # Run detection
 results = model.detect([image])
